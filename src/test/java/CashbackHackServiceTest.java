@@ -16,7 +16,7 @@ public class CashbackHackServiceTest {
     @org.testng.annotations.Test
 
     public void ifThousandAmount(){
-        Assert.assertEquals(service.remain(1000),1000);
+        Assert.assertEquals(service.remain(1000),0);
     }
 
     @org.testng.annotations.Test
