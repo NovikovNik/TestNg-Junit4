@@ -1,8 +1,6 @@
-import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
+import org.junit.jupiter.api.Test;
 
-
-import static org.testng.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CashbackHackServiceTest {
     CashbackHackService service = new CashbackHackService();
@@ -28,6 +26,29 @@ public class CashbackHackServiceTest {
     @org.junit.Test
     public void ifMinusValueAmount(){
         org.junit.Assert.assertEquals(1000,service.remain(-1000));
+    }
+
+    @Test
+
+    public void ifZeroAmountJupiterApi(){
+        assertEquals(1000,service.remain(0));
+    }
+
+    @Test
+
+    public void ifThousandAmountJupiterApi(){
+        assertEquals(0,service.remain(1000));
+    }
+
+    @Test
+
+    public void ifMoreThanThousandAmountJupiterApi(){
+        assertEquals(500,service.remain(1500));
+    }
+
+    @Test
+    public void ifMinusValueAmountJupiterApi(){
+        assertEquals(1000,service.remain(-1000));
     }
 
 }
